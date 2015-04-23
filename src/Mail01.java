@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class Mail01 {
     private WebDriver driver;
@@ -27,7 +29,7 @@ public class Mail01 {
     }
 
     @Test
-    public void testUntitled3() throws Exception {
+    public void testIncorrectLoginAndPassword() throws Exception {
         driver.get(baseUrl + "/");
         driver.findElement(By.id("mailbox__login")).clear();
         driver.findElement(By.id("mailbox__login")).sendKeys("www");
@@ -35,6 +37,18 @@ public class Mail01 {
         driver.findElement(By.id("mailbox__password")).sendKeys("www");
         driver.findElement(By.id("mailbox__auth__button")).click();
         // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | name=srvt=1429785566298 | ]]
+    }
+
+    @Test
+    public void testCorrectLoginAndPassword() throws Exception {
+        driver.get(baseUrl);
+        driver.findElement(By.id("mailbox__login")).clear();
+        driver.findElement(By.id("mailbox__login")).sendKeys("testmail00111");
+        driver.findElement(By.id("mailbox__password")).clear();
+        driver.findElement(By.id("mailbox__password")).sendKeys("qwerty12345");
+        driver.findElement(By.id("mailbox__auth__button")).click();
+        driver.findElement(By.xpath("//div[@id='portal-menu']/div[2]/div/div/div[2]/div/span/span[2]/span[2]/a/span[2]/span")).click();
+        driver.findElement(By.xpath("//div[@id='portal-menu']/div[2]/div/div/div[2]/div/span/span[2]/span[3]/a/span[2]/span")).click();
     }
 
     @After
