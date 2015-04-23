@@ -28,7 +28,6 @@ public class Mail01 {
         driver.findElement(By.id("mailbox__password")).clear();
         driver.findElement(By.id("mailbox__password")).sendKeys("www");
         driver.findElement(By.id("mailbox__auth__button")).click();
-        // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | name=srvt=1429785566298 | ]]
     }
 
     @Test
