@@ -1,19 +1,11 @@
 /**
  * Created by sergey.petrakov on 4/23/2015.
  */
-//public class Mail01
-
-
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 
 public class Mail01 {
     private WebDriver driver;
