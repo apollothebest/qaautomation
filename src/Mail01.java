@@ -23,11 +23,11 @@ public class Mail01 {
     @Test
     public void testIncorrectLoginAndPassword() throws Exception {
         driver.get(baseUrl + "/");
-        driver.findElement(By.id("mailbox__login")).clear();
-        driver.findElement(By.id("mailbox__login")).sendKeys("www");
-        driver.findElement(By.id("mailbox__password")).clear();
-        driver.findElement(By.id("mailbox__password")).sendKeys("www");
-        driver.findElement(By.id("mailbox__auth__button")).click();
+        driver.findElement(Locators.LOGIN).clear();
+        driver.findElement(Locators.LOGIN).sendKeys("www");
+        driver.findElement(Locators.PASSWORD).clear();
+        driver.findElement(Locators.PASSWORD).sendKeys("www");
+        driver.findElement(Locators.AUTHBUTTON).click();
     }
 
     @Test
